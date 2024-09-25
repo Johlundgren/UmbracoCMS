@@ -1,0 +1,213 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+
+    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+
+    var boxOneImage = Model?.Value<IPublishedContent>("serviceBoxOneImg")?.Url() ?? "";
+    var boxTwoImage = Model?.Value<IPublishedContent>("serviceBoxTwoImg")?.Url() ?? "";
+    var boxThreeImage = Model?.Value<IPublishedContent>("serviceBoxThreeImg")?.Url() ?? "";
+    var boxFourImage = Model?.Value<IPublishedContent>("serviceBoxFourImg")?.Url() ?? "";
+    var boxFiveImage = Model?.Value<IPublishedContent>("serviceBoxFiveImg")?.Url() ?? "";
+    var boxSixImage = Model?.Value<IPublishedContent>("serviceBoxSixImg")?.Url() ?? "";
+
+    var trustBackground = Model?.Value<IPublishedContent>("trustBackgroundImage")?.Url() ?? "";
+    var teamPicture = Model?.Value<IPublishedContent>("trustTeamImage")?.Url() ?? "";
+
+    var successDotted = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
+    var successTeam = Model?.Value<IPublishedContent>("successTeamPicture")?.Url() ?? "";
+
+    var projectOne = Model?.Value<IPublishedContent>("projectsBoxOneImage")?.Url() ?? "";
+    var projectTwo = Model?.Value<IPublishedContent>("projectsBoxTwoImage")?.Url() ?? "";
+    var projectThree = Model?.Value<IPublishedContent>("projectsBoxThreeImage")?.Url() ?? "";
+    var projectFour = Model?.Value<IPublishedContent>("projectsBoxFourImage")?.Url() ?? "";
+
+    var logotypeOne = Model?.Value<IPublishedContent>("logotypeImageOne")?.Url() ?? "";
+    var logotypeTwo = Model?.Value<IPublishedContent>("logotypeImageTwo")?.Url() ?? "";
+    var logotypeThree = Model?.Value<IPublishedContent>("logotypeImageThree")?.Url() ?? "";
+    var logotypeFour = Model?.Value<IPublishedContent>("logotypeImageFour")?.Url() ?? "";
+    var logotypeFive = Model?.Value<IPublishedContent>("logotypeImageFive")?.Url() ?? "";
+    var logotypeSix = Model?.Value<IPublishedContent>("logotypeImageSix")?.Url() ?? "";
+}
+
+<section id="hero-slider" class="hero">
+    <img src="@backgroundImage" alt="Hero Image">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="headline">@Model?.Value("heroHeadline")</h1>
+            <p class="ingress">@Model?.Value("heroText")</p>
+            <div class="btn">
+                <a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-us" class="about-us">
+    <div class="container">
+        <div class="content">
+            <div class="headline">
+                <h5>@Model.Value("aboutSectionTitle")</h5>
+                <h2>@Model.Value("aboutHeadline")</h2>
+            </div>
+            <blockquote class="quote">@Model.Value("aboutQuote")</blockquote>
+            <p>@Model.Value("aboutText")</p>
+            <div class="signature-container">
+                <div class="signature">
+                    <img class="signature-image" src="@signatureImage" alt="@Model.Value("aboutSignature")" >
+                    <div class="clarification">
+                        <p class="name">@Model.Value("aboutSignature")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+        
+        </div>
+    </div>
+</section>
+
+<section id="services" class="our-services">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("serviceSectionTitle")</h5>
+            <h2>@Model.Value("serviceHeadline")</h2>
+        </div>
+        <div class="content">
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxOneTitle")</h2>
+                <img src="@boxOneImage" alt="Risk management">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxTwoTitle")</h2>
+                <img src="@boxTwoImage" alt="Bonds & Commodities">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxThreeTitle")</h2>
+                <img src="@boxThreeImage" alt="Assurance & Audits">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxFourTitle")</h2>
+                <img src="@boxFourImage" alt="Tax and Trusts">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxFiveTitle")</h2>
+                <img src="@boxFiveImage" alt="Financial Advisor">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("serviceBoxSixTitle")</h2>
+                <img src="@boxSixImage" alt="Statistic Advisors">
+                <p>@Model.Value("serviceBoxDescription")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="trust" class="trust-us">
+    <div class="container">
+        <img src="@trustBackground" alt="dotted map">
+        <div class="headline">
+            <h2>@Model.Value("trustHeadline")</h2>
+            <h2 class="color-headline">@Model.Value("trustColorHeadline")</h2>
+        </div>
+        <div class="content">
+            <p>@Model.Value("trustDescription")</p>
+            <button class="btn btn-primary">@Model.Value("trustButtonText")</button>
+        </div>
+        <img src="@teamPicture" alt="Team picture">
+    </div>
+</section>
+
+<section id="success" class="success-stories">
+    <img class="dotted" src="@successDotted" alt="dotted map">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("successSectionTitle")</h5>
+            <h2>@Model.Value("successHeadline")</h2>
+        </div>
+        <div class="content">
+            <div class="content-box">
+                <h2>@Model.Value("successBoxOneHeadline")</h2>
+                <p>@Model.Value("successBoxOneContent")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("successBoxTwoHeadline")</h2>
+                <p>@Model.Value("successBoxTwoContent")</p>
+            </div>
+            <div class="content-box">
+                <h2>@Model.Value("successBoxThreeHeadline")</h2>
+                <p>@Model.Value("successBoxThreeContent")</p>
+            </div>
+        </div>
+        <img src="@successTeam" alt="Team picture">   
+    </div>
+</section>
+
+<section id="projects" class="our-projects">
+    <div class="container">
+        <div class="headline">
+            <h5>@Model.Value("projectsSectionTitle")</h5>
+            <h2>@Model.Value("projectsHeadline")</h2>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-box">
+            <a href="project1.html">
+                <img src="@projectOne" alt="Project 1">
+            </a>
+            <div class="text-content">
+                <h5>@Model.Value("projectsBoxOneHeadline")</h5>
+                <p>@Model.Value("projectsBoxContent")</p>
+            </div>
+        </div>
+        <div class="content-box">
+            <a href="project2.html">
+                <img src="@projectTwo" alt="Project 2">
+            </a>
+            <div class="text-content">
+                <h5>@Model.Value("projectsBoxTwoHeadline")</h5>
+                <p>@Model.Value("projectsBoxContent")</p>
+            </div>
+        </div>
+        <div class="content-box">
+            <a href="project3.html">
+                <img src="@projectThree" alt="Project 3">
+            </a>
+            <div class="text-content">
+                <h5>@Model.Value("projectsBoxThreeHeadline")</h5>
+                <p>@Model.Value("projectsBoxContent")</p>
+            </div>
+        </div>
+        <div class="content-box">
+            <a href="project4.html">
+                <img src="@projectFour" alt="Project 4">
+            </a>
+            <div class="text-content">
+                <h5>@Model.Value("projectsBoxFourHeadline")</h5>
+                <p>@Model.Value("projectsBoxContent")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="logotypes" class="logo">
+    <div class="container">
+        <img src="@logotypeOne" alt="freedombirdlogo">
+        <img src="@logotypeTwo" alt="identitylogo">
+        <img src="@logotypeThree" alt="naturallogo">
+        <img src="@logotypeFour" alt="simpleaflogo">
+        <img src="@logotypeFive" alt="globelogo">
+        <img src="@logotypeSix" alt="fossilgrouplogo">
+    </div>
+</section>
