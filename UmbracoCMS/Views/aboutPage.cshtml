@@ -3,33 +3,107 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var headshotTina = Model?.Value<IPublishedContent>("aboutTinaImage")?.Url() ?? "";
+    var headshotKevin = Model?.Value<IPublishedContent>("reviewSectionHeadshot")?.Url() ?? "";
+
+    var headshotBrandon = Model?.Value<IPublishedContent>("aboutBoxOneImage")?.Url() ?? "";
+    var headshotAj = Model?.Value<IPublishedContent>("aboutBoxTwoImage")?.Url() ?? "";
+    var headshotAaron = Model?.Value<IPublishedContent>("aboutBoxThreeImage")?.Url() ?? "";
+    var headshotKerr = Model?.Value<IPublishedContent>("aboutBoxFiveImage")?.Url() ?? "";
+    var headshotMiranda = Model?.Value<IPublishedContent>("aboutBoxSixImage")?.Url() ?? "";
+    var headshotGardner = Model?.Value<IPublishedContent>("aboutBoxSevenImage")?.Url() ?? "";
+    
 }
-	<header>
-       <div class="background-image">
-            <img src="images/backgrounds/whitecircle.svg" alt="Header background">
-        </div>
-        <div class="intro">
-            <h2>About Us</h2>
-            <a href="/">Home</a>
-            <p><i class="fa-solid fa-chevrons-right"></i></p>
-            <p class="color-p">About</p>
-        </div>
-	</header>
+    @await Html.PartialAsync("partials/static/secondheader.cshtml")
         <section id="tina" class="about-tina">
             <div class="container">
                 <div class="left-side">
-                    <img src="images/headshots/tina-fox.svg" alt="tina fox ceo">
-                    <p>Tina Fox - CEO & Founder at Onatrix</p>
+                    <img src="@headshotTina" alt="tina fox ceo">
+                    <p>@Model.Value("aboutTinaCeo")</p>
                 </div>
                 <div class="right-side">
-                    <p class="cursive-p">“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus a massa lobortis sollicitudin. Cras ut nulla quam. Maecenas tempus felis quis lorem malesuada vehicular.</p>
-                    <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum.</p>
-                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
-                    <p>Phasellus laoreet, sapien id euismod hendrerit, nibh ligula hendrerit libero, sit amet hendrerit elit turpis nec velit. Praesent tincidunt nisi at vulputate ornare. Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum elit at urna dapibus viverra. Etiam lectus libero, condimentum eget justo ac, accumsan suscipit libero.</p>
-                    <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum  i commodo, eros quis consequat consequat.</p>
-                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
-                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+                    <p class="cursive-p">@Model.Value("aboutTinaCursive")</p>
+                    <p>@Model.Value("aboutTinaTextOne")</p>
+                    <p>@Model.Value("aboutTinaTextTwo")</p>
+                    <p>@Model.Value("aboutTinaTextThree")</p>
+                    <p>@Model.Value("aboutTinaTextFour")</p>
+                    <p>@Model.Value("aboutTinaTextFive")</p>
+                    <p>@Model.Value("aboutTinaTextSix")</p>
+                    <p>@Model.Value("aboutTinaTextSix")</p>
                 </div>
             </div>
         </section>
+
+        <section id="review" class="about-review">
+            <div class="container">
+                <div class="left-side">
+                    <h5>@Model.Value("reviewSectionTitle")</h5>
+                    <h2>@Model.Value("reviewSectionHeadline")</h2>
+                    <p class="cursive-p">@Model.Value("reviewSectionCursive")</p>
+                    <div class="stars">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                    </div>
+                    <p>@Model.Value("reviewSectionName")</p>
+                    <p class="cursive">@Model.Value("reviewSectionBank")</p>
+                </div>
+                <div class="right-side">
+                    <img src="@headshotKevin" alt="kevin gardner">
+                </div>
+            </div>
+        </section>
+
+        <section id="expert" class="about-expert">
+            <div class="container">
+                <div class="headline">
+                    <h5>@Model.Value("aboutExpertSectionTitle")</h5>
+                    <h2>@Model.Value("aboutExpertSectionHeadline")</h2>
+                </div>
+                <div class="gridbox">
+                    <div class="content">
+                        <div class="content-box">
+                            <img src="@headshotBrandon" alt="brandon-newton">
+                            <h3>@Model.Value("aboutBoxOneName")</h3>
+                            <p>@Model.Value("aboutBoxOneJob")</p>
+                        </div>
+                        <div class="content-box">
+                            <img src="@headshotAj" alt="aj-carter">
+                            <h3>@Model.Value("aboutBoxTwoName")</h3>
+                            <p>@Model.Value("aboutBoxTwoJob")</p>
+                        </div>
+                        <div class="content-box">
+                            <img src="@headshotAaron" alt="aaron-lambert">
+                            <h3>@Model.Value("aboutBoxThreeName")</h3>
+                            <p>@Model.Value("aboutBoxThreeJob")</p>
+                        </div>
+                    </div>
+                    <div class="content-second">
+                        <div class="content-box">
+                            <img src="@headshotTina" alt="tina-fox">
+                            <h3>@Model.Value("aboutBoxFourName")</h3>
+                            <p>@Model.Value("aboutBoxFourJob")</p>
+                        </div>
+                        <div class="content-box">
+                            <img src="@headshotKerr" alt="brandon-kerr">
+                            <h3>@Model.Value("aboutBoxFiveName")</h3>
+                            <p>@Model.Value("aboutBoxFiveJob")</p>
+                        </div>
+                        <div class="content-box">
+                            <img src="@headshotMiranda" alt="miranda-dayton">
+                            <h3>@Model.Value("aboutBoxSixName")</h3>
+                            <p>@Model.Value("aboutSixJob")</p>
+                        </div>
+                        <div class="content-box">
+                            <img src="@headshotGardner" alt="kevin-gardner">
+                            <h3>@Model.Value("aboutBoxSevenName")</h3>
+                            <p>@Model.Value("aboutBoxSevenJob")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @await Html.PartialAsync("partials/static/topfooter.cshtml")
