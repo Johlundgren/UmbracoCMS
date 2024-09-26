@@ -1,0 +1,35 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+}
+	<header>
+       <div class="background-image">
+            <img src="images/backgrounds/whitecircle.svg" alt="Header background">
+        </div>
+        <div class="intro">
+            <h2>About Us</h2>
+            <a href="/">Home</a>
+            <p><i class="fa-solid fa-chevrons-right"></i></p>
+            <p class="color-p">About</p>
+        </div>
+	</header>
+        <section id="tina" class="about-tina">
+            <div class="container">
+                <div class="left-side">
+                    <img src="images/headshots/tina-fox.svg" alt="tina fox ceo">
+                    <p>Tina Fox - CEO & Founder at Onatrix</p>
+                </div>
+                <div class="right-side">
+                    <p class="cursive-p">“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus a massa lobortis sollicitudin. Cras ut nulla quam. Maecenas tempus felis quis lorem malesuada vehicular.</p>
+                    <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum.</p>
+                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+                    <p>Phasellus laoreet, sapien id euismod hendrerit, nibh ligula hendrerit libero, sit amet hendrerit elit turpis nec velit. Praesent tincidunt nisi at vulputate ornare. Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum elit at urna dapibus viverra. Etiam lectus libero, condimentum eget justo ac, accumsan suscipit libero.</p>
+                    <p>Morbi commodo, eros quis consequat consequat, orci lacus auctor ligula, ut maximus arcu sapien nec elit. Suspendisse rutrum  i commodo, eros quis consequat consequat.</p>
+                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+                    <p>Cras auctor, dui eu eleifend malesuada, nunc dui pretium urna, id euismod orci urna non est. Pellentesque imperdiet tortor ut elementum viverra.</p>
+                </div>
+            </div>
+        </section>
