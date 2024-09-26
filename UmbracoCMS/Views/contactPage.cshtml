@@ -2,4 +2,19 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 }
+
+	<header>
+       <div class="background-image">
+            <img src="media/wndlucis/whitecircle.svg" alt="Header background">
+        </div>
+        <div class="intro">
+            <h2>Contact Us</h2>
+            <a href="/">Home</a>
+            <p><i class="fa-solid fa-chevrons-right"></i></p>
+            <p class="color-p">Contact</p>
+        </div>
+	</header>
+
+@await Html.PartialAsync("partials/static/topfooter.cshtml")

@@ -2,4 +2,65 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var serviceOne = Model?.Value<IPublishedContent>("serviceOneImage")?.Url() ?? "";
+    var serviceTwo = Model?.Value<IPublishedContent>("serviceTwoImage")?.Url() ?? "";
+    var serviceThree = Model?.Value<IPublishedContent>("serviceThreeImage")?.Url() ?? "";
+    var serviceFour = Model?.Value<IPublishedContent>("serviceFourImage")?.Url() ?? "";
+    var serviceFive = Model?.Value<IPublishedContent>("serviceFiveImage")?.Url() ?? "";
+    var serviceSix = Model?.Value<IPublishedContent>("serviceSixImage")?.Url() ?? "";
 }
+	<header>
+       <div class="background-image">
+            <img src="media/wndlucis/whitecircle.svg" alt="Header background">
+        </div>
+        <div class="intro">
+            <h2>Our Services</h2>
+            <a href="/">Home</a>
+            <p><i class="fa-solid fa-chevrons-right"></i></p>
+            <p class="color-p">Services</p>
+        </div>
+	</header>
+
+	       <section id="services" class="our-services">
+            <div class="container">
+                <div class="headline">
+                    <h5>@Model.Value("serviceSectionTitle")</h5>
+                    <h2>@Model.Value("serviceSectionHeadline")</h2>
+                </div>
+                <div class="content">
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceOneTitle")</h2>
+                        <img src="@serviceOne" alt="Risk management">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceTwoTitle")</h2>
+                        <img src="@serviceTwo" alt="">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceThreeTitle")</h2>
+                        <img src="@serviceThree" alt="">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceFourTitle")</h2>
+                        <img src="@serviceFour" alt="">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceFiveTitle")</h2>
+                        <img src="@serviceFive" alt="">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                    <div class="content-box">
+                        <h2>@Model.Value("serviceSixTitle")</h2>
+                        <img src="@serviceSix" alt="">
+                        <p>@Model.Value("serviceDescription")</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @await Html.PartialAsync("partials/static/topfooter.cshtml")
