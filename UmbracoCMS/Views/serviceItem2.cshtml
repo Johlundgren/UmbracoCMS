@@ -1,0 +1,146 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+    var leftSideImage = Model?.Value<IPublishedContent>("serviceLeftImage")?.Url() ?? "";
+    var rightTopImage = Model?.Value<IPublishedContent>("serviceRightTopImage")?.Url() ?? "";
+    var headImage = Model?.Value<IPublishedContent>("headerImage")?.Url() ?? "";
+    var rightBottomImage = Model?.Value<IPublishedContent>("serviceRightBottomImage")?.Url() ?? "";
+    var footer1 = Model?.Value<IPublishedContent>("footerImage1")?.Url() ?? "";
+    var footer2 = Model?.Value<IPublishedContent>("footerImage2")?.Url() ?? "";
+}
+
+	<header>
+       <div class="background-image">
+            <img src="@headImage" alt="Header background">
+        </div>
+    <div class="intro">
+        <h2>Bonds & Commodities</h2>
+        <a href="/">Home</a>
+        <p><i class="fa-solid fa-chevrons-right"></i></p>
+        <a href="/services/">Services</a>
+        <p><i class="fa-solid fa-chevrons-right"></i></p>
+        <p class="color-p">Bonds & Commodities</p>
+    </div>
+	</header>
+
+<section id="risk-management" class="service-page">
+        <div class="container">
+            <div class="left-side">
+                <h5>@Model.Value("serviceLeftHeadline")</h5>
+                <a href="/">
+                    <img src="@leftSideImage" alt="Team pic">
+                </a>
+                <p>@Model.Value("serviceLeftDescription")</p>
+                <div class="green-box-support">
+                    <h5>How can we help you?</h5>
+                    <p>Online support 24/7, we are here to help you</p>
+                    <form action="/submit-form" method="POST">
+                        <div>
+                            <input type="text" placeholder="E-mail address">
+                        </div>
+                        </form>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <img src="@rightTopImage" alt="Risk Management">
+                <h3>@Model.Value("serviceRightHeadline")</h3>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBoxContent1")</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBoxContent2")</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBoxContent3")</p>
+                </div>
+                <h3>@Model.Value("serviceRightHeadline2")</h3>
+                <p>No matter where you find yourself today or see yourself in the future, a financial planning relationship with an Ameriprise financial advisor can help you find your financial balance and bring your dreams and goals more within reach.</p>
+                <p>Our Confident Retirement approach to financial planning begins with a one-on-one conversation. At its core is a personal relationship with an advisor dedicated to helping you reach the future you imagine, on your own terms, in a way that is convenient for you.</p>
+                <p>The financial planning process all starts with learning about you. Your advisor will take the time to:</p>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBox2Content1")</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBox2Content2")</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>@Model.Value("serviceRightBox2Content3")</p>
+                </div>
+                <p>Then your advisor will offer personalized advice and guidance to help you reach your financial goals. Ameriprise advisors have access to a broad array of solutions to help you plan for your confident future.</p>
+                <p>And once you have a plan in place, you may feel more confident knowing that your advisor will stay with you over time, helping you track your progress toward your goals and making adjustments along the way when your life or dreams change.</p>
+                <img src="@rightBottomImage" alt="Team picture of 5">
+                <h3>@Model.Value("serviceRightHeadline3")</h3>
+                <p>Working with a financial advisor may help you come away feeling more confident knowing that you have the support you need to help:</p>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>Cover your essentials. Essentials are the monthly expenses that keep your life running.</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>Ensure your lifestyle. Lifestyle is about the things that you want to do, and how you want to live, today and in the future.</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>Prepare for the unexpected. The unexpected are events that could derail your financial plans.</p>
+                </div>
+                <div class="content">
+                    <i class="fa-solid fa-circle"></i>
+                    <p>Leave a legacy. Legacy is about the impact you will make on the people, charities and causes that are important to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-box">
+        <div class="container">
+            <h3>Have a question?</h3>
+    
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+                <div class="textarea-group">
+                    <textarea placeholder="Question" rows="5" required></textarea>
+                </div>
+            </form>
+    
+            <button class="btn-primary">Submit</button>
+        </div>
+    </section>
+
+	        <section class="top-footer">
+            <div class="container">
+                <div class="left-side">
+                    <img src="@footer1" alt="guy with crossed arms">
+                    <img src="@footer2" alt="green square lookalike">
+                </div>
+                <div class="right-side">
+                    <h2>Let us know about your next project</h2>
+                    <div class="office">
+                        <i class="fa-regular fa-location-dot"></i>
+                        <p>Office Location</p>
+                    </div>
+                    <p>Klarabergsviadukten 90, 111 52 Stockholm</p>
+                    <div class="phone">
+                        <i class="fa-regular fa-phone"></i>
+                        <p>Phone Number</p>
+                    </div>
+                    <p>+46 8 123 456 75</p>
+                    <div class="email">
+                        <i class="fa-sharp fa-regular fa-envelope"></i>
+                        <p>E-mail address</p>
+                    </div>
+                    <p>sales@onatrix.com</p>
+                </div>
+            </div>
+        </section>
