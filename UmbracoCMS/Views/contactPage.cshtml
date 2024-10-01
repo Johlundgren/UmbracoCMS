@@ -3,6 +3,16 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var bgImg = Model?.Value<IPublishedContent>("contactBgImg")?.Url() ?? "";
+    var logo1 = Model?.Value<IPublishedContent>("contactLogo1")?.Url() ?? "";
+    var logo2 = Model?.Value<IPublishedContent>("contactLogo2")?.Url() ?? "";
+    var logo3 = Model?.Value<IPublishedContent>("contactLogo3")?.Url() ?? "";
+    var logo4 = Model?.Value<IPublishedContent>("contactLogo4")?.Url() ?? "";
+    var logo5 = Model?.Value<IPublishedContent>("contactLogo5")?.Url() ?? "";
+    var logo6 = Model?.Value<IPublishedContent>("contactLogo6")?.Url() ?? "";
+    
+
 }
 
 	<header>
@@ -18,3 +28,17 @@
 	</header>
 
 @await Html.PartialAsync("partials/static/topfooter.cshtml")
+
+        <section class="map">
+            <img src="@bgImg" alt="Map">
+        </section>
+        <section id="logotypes" class="logo">
+            <div class="container">
+                <img src="@logo1" alt="freedombirdlogo">
+                <img src="@logo2" alt="identitylogo">
+                <img src="@logo3" alt="naturallogo">
+                <img src="@logo4" alt="simpleaflogo">
+                <img src="@logo5" alt="globelogo">
+                <img src="@logo6" alt="fossilgrouplogo">
+            </div>
+        </section>

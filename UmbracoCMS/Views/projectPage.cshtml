@@ -3,6 +3,12 @@
 @{
 	Layout = "mainLayout.cshtml";
 	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var projectImg1 = Model?.Value<IPublishedContent>("project1Image")?.Url() ?? "";
+    var projectImg2 = Model?.Value<IPublishedContent>("project2Image")?.Url() ?? "";
+    var projectImg3 = Model?.Value<IPublishedContent>("project3Image")?.Url() ?? "";
+    var projectImg4 = Model?.Value<IPublishedContent>("project4Image")?.Url() ?? "";
+    
 }
 
 	<header>
@@ -16,5 +22,85 @@
             <p class="color-p">Projects</p>
         </div>
 	</header>
+
+
+        <section id="project" class="our-projects">
+            <div class="container">
+                <div class="left-side">
+                    <img src="@projectImg1" alt="Project Image One">
+                </div>
+                    <div class="right-side">
+                        <h5>@Model.Value("project1Headline")</h5>
+                        <div class="date">
+                            <i class="fa-light fa-calendar"></i>
+                            <p>@Model.Value("project1Date")</p>
+                        </div>
+                        <p>@Model.Value("project1Description")</p>
+                        <a href="/#projects">
+                            Read More <i class="fa-regular fa-arrow-right"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="container">
+                <div class="left-side">
+                    <img src="@projectImg2" alt="Project Image Two">
+                </div>
+                    <div class="right-side">
+                        <h5>@Model.Value("project2Headline")</h5>
+                        <div class="date">
+                            <i class="fa-light fa-calendar"></i>
+                            <p>@Model.Value("project2Date")</p>
+                        </div>
+                        <p>@Model.Value("project2Description")</p>
+                        <a href="/#projects">
+                            Read More <i class="fa-regular fa-arrow-right"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="container">
+                <div class="left-side">
+                    <img src="@projectImg3" alt="Project Image Three">
+                </div>
+                    <div class="right-side">
+                        <h5>@Model.Value("project3Headline")</h5>
+                        <div class="date">
+                            <i class="fa-light fa-calendar"></i>
+                            <p>@Model.Value("project3Date")</p>
+                        </div>
+                        <p>@Model.Value("project3Description")</p>
+                        <a href="/#projects">
+                            Read More <i class="fa-regular fa-arrow-right"></i>
+                        </a>
+                    </div>
+            </div>
+            <div class="container">
+                <div class="left-side">
+                    <img src="@projectImg4" alt="Project Image Four">
+                </div>
+                    <div class="right-side">
+                        <h5>@Model.Value("project4Headline")</h5>
+                        <div class="date">
+                            <i class="fa-light fa-calendar"></i>
+                            <p>@Model.Value("project4Date")</p>
+                        </div>
+                        <p>@Model.Value("project4Description")</p>
+                        <a href="/#projects">
+                            Read More <i class="fa-regular fa-arrow-right"></i>
+                        </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="pagnation">
+            <div class="container">
+                <a href="/">Prev</a>
+                <a href="/">1</a>
+                <a href="/">2</a>
+                <a href="/">Next</a>
+            </div>
+        </section>
+
+
+
 
 @await Html.PartialAsync("partials/static/topfooter.cshtml")
