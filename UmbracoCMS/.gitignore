@@ -478,4 +478,3 @@ umbraco-package-schema.json
 /umbraco/Logs/
 
 # Media files
-/wwwroot/media/
